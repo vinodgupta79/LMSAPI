@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiate Sale</title>
+</head>
+<body>
+    <label for="merchantTxnId">Merchant Txn No:</label>
+    <input type="text" id="merchantTxnId" value="ABC07650267">
+    <button id="initiateSaleButton">Initiate Sale</button>
+<h2 id="pw"></h2>
+
+    <script>
+        document.getElementById('initiateSaleButton').addEventListener('click', async () => {
+
+		
+        document.getElementById('pw').innerHTML="Please Wait......"
+            try {
+                const merchantTxnId = document.getElementById('merchantTxnId').value;
+                const response = await fetch('/initiateSale', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ merchantTxnId })
+                });
+                const data = await response.json();
+                console.log(data);
+               
+                console.log("msg",data.message);
+
+                if(data.value.responseCode == "R1000") {
+ document.getElementById('pw').innerHTML="Redirect to payment page"
+
+
+                    console.log(data.value.responseCode);
+  console.log("please Wait");
+                    setTimeout(() => {
+                        window.location.href = `https://qa.phicommerce.com/pg/api/v2/authRedirect?tranCtx=${data.value.tranCtx}`;
+                    }, 1000);
+                } else {
+                    console.log(data.value.responseCode);
+ document.getElementById('pw').innerHTML="Duplicate merchant transaction reference number"
+
+                    console.log("some error ")
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

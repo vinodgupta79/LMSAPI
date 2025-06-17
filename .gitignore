@@ -1,0 +1,6 @@
+node_modules/
+.env
+private.key
+dist/
+src_10_02_25/
+fbPrivateKey.json
