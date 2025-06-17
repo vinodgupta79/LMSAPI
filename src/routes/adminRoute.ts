@@ -70,6 +70,8 @@ router.post('/upload/exam-data', upload.single('file'), admin.bulkUploadExamQues
 router.get('/chapertsummary/:id', admin.chapertsummary);
 
 // KMS INTEGRATION
+
+//test comment
 router.post('/KMS/journey-data', admin.fetchJourneyData);
 router.post('/KMS/journey-detail', admin.fetchJourneyDetail);
 router.post('/KMS/stage-chapter', admin.getCourseByFaq);
