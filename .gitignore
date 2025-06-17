@@ -3,4 +3,4 @@ node_modules/
 private.key
 dist/
 src_10_02_25/
-fbPrivateKey.json
+src/fbPrivateKey.json
