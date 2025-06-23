@@ -364,7 +364,7 @@ const course = async (): Promise<any> => {
 
         //// debugger
 
-        return await sequelize.query(`select orgstructureid as courseid,orgstructurename as coursename,TIMEPERIODMAX as total_course_time from ORGSTRUCTURE where PARENTKEY<100`, {
+        return await sequelize.query(`select orgstructureid as courseid,orgstructurename as coursename,TIMEPERIODMAX as total_course_time,GROUPTYPE from ORGSTRUCTURE where PARENTKEY<100`, {
             replacements: {
 
             },

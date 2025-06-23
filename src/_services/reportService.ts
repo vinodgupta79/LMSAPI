@@ -22,12 +22,13 @@ export const getReportDataDateWiseService = async (data: any): Promise<any> => {
     const transaction = await sequelize.transaction();
     try {
         const result = await sequelize.query(
-            `call sp_reportByDate(:entryDate,:expiryDate,:inputCourseID)`,
+            `call sp_reportByDate(:entryDate,:expiryDate,:sponsor,:inputCourseID)`,
             {
                 replacements: {
                     entryDate: data.entryDate,
                     expiryDate: data.expiryDate,
-                    inputCourseID: data.courseId
+                    inputCourseID: data.courseId,
+                    sponsor : data.sponsor
                 },
                 type: QueryTypes.RAW,
             }
