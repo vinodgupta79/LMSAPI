@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-var allowedOrigins = ['http://103.171.45.231:8080', 'http://103.171.45.88:8080', 'http://127.0.0.1:3000', 'http://13.234.28.228:8000', 'http://52.66.173.135:3000', 'http://52.66.173.135:3001', 'http://52.66.173.135:3002', 'http://localhost:3000', 'https://www.remitwise.in', 'https://test.remitwise.in'];
+var allowedOrigins = ['http://103.171.45.231', 'https://hbitscollege.com', 'http://hbitscollege.com', 'http://127.0.0.1:3000', 'http://localhost:3000'];
 app.use(cors({
     origin: function (origin, callback) {
         // allow requests with no origin 
