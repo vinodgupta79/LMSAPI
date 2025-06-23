@@ -240,7 +240,7 @@ const signin = async (userId: string, psd: string, loginfrom: string): Promise<a
     //debugger
     let res: any = [];
 
-    console.log("from req", psd);
+    // console.log("from req", psd);
     try {
 
         /*const checkpwd: any = await sequelize.query(`CALL getloginhash(:userId)`, {
@@ -271,7 +271,7 @@ const signin = async (userId: string, psd: string, loginfrom: string): Promise<a
 
         const secretKey: any = process.env.ACCESS_TOKEN;
         const token = jwt.sign(payload, secretKey, option);
-        console.log(token)
+        // console.log(token)
 
 
 
@@ -290,7 +290,7 @@ const signin = async (userId: string, psd: string, loginfrom: string): Promise<a
 
 
         res = result[0][0];
-        console.log(res);
+        // console.log(res);
 
 
         return res;

@@ -18,13 +18,13 @@ const sequelize = new Sequelize(config.service_name, config.db_user, config.db_p
   dialect: 'mysql',
   host: config.db_host,
   port: config.db_port, //optional,
-  logging: console.log, // Enable SQL logging
+  logging: false, //console.log, // Enable SQL logging
   pool: {
-          max: 5,
-          min: 0,
-          acquire: 30000,
-          idle: 10000
-      }
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 });
 
 

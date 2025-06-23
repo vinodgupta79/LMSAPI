@@ -126,7 +126,7 @@ const signin: RequestHandler = async (req, res, next) => {
         let result: any = await commonService.signin(req.body.userid, req.body.password, req.body.loginfrom)
 
         let changeDetail: any = result;
-        console.log(changeDetail);
+        // console.log(changeDetail);
 
 
         res.status(200).json(response.success(changeDetail));
